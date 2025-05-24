@@ -150,8 +150,8 @@ $namaUser = $user['nama'];
               </div>
             </div>
           </div>
-        <div style="max-width: 800px; margin: 0 auto;"> 
-    <?php include 'chart.php'; ?>
+<div style="max-width: 800px; margin: 0 auto;"> 
+<?php include 'chart.php'; ?>
     
 </div>
         </section>
@@ -172,11 +172,11 @@ $namaUser = $user['nama'];
               <label for="kategori" class="form-label">Kategori</label>
               <input list="daftar-kategori" class="form-control" id="kategori" name="kategori" placeholder="pilih atau tulis kategori" required>
               <datalist id="daftar-kategori">
-                <option value="Elektronik">
-                <option value="Pakaian">
-                <option value="Makanan">
-                <option value="Aksesoris">
-              </datalist>
+    <option value="Elektronik">
+    <option value="Pakaian">
+    <option value="Makanan">
+    <option value="Aksesoris">
+  </datalist>
             </div>
             <div class="mb-3">
               <label for="keterangan" class="form-label">Keterangan (Opsional)</label>
@@ -202,11 +202,11 @@ $namaUser = $user['nama'];
               <label for="kategori" class="form-label">Kategori</label>
               <input list="daftar-kategori" class="form-control" id="kategori" name="kategori" placeholder="pilih atau tulis kategori" required>
               <datalist id="daftar-kategori">
-                <option value="Elektronik">
-                <option value="Pakaian">
-                <option value="Makanan">
-                <option value="Aksesoris">
-              </datalist>
+    <option value="Elektronik">
+    <option value="Pakaian">
+    <option value="Makanan">
+    <option value="Aksesoris">
+  </datalist>
             </div>
             <div class="mb-3">
               <label for="keterangan" class="form-label">Keterangan (Opsional)</label>
