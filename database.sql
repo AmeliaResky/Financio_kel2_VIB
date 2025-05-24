@@ -1,7 +1,5 @@
 CREATE DATABASE money_app;
 
-
-
 CREATE TABLE user (
 	id INT(10) NOT NULL AUTO_INCREMENT,
 	nama VARCHAR(100) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
