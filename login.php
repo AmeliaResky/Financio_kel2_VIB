@@ -2,55 +2,40 @@
 session_start();
 include 'koneksi.php';
 
-if ($user && password_verify($password, $user['password'])) {
-    session_regenerate_id(true);
-
-    // Ambil data lengkap user (termasuk foto)
-    $query_foto = $conn->prepare("SELECT nama, foto FROM user WHERE id = ?");
-    $query_foto->bind_param("i", $user['id']);
-    $query_foto->execute();
-    $result_foto = $query_foto->get_result();
-    $data_user = $result_foto->fetch_assoc();
-
-    // Simpan ke session
-    $_SESSION['user_id'] = $user['id'];
-    $_SESSION['nama_user'] = $data_user['nama'];
-    $_SESSION['foto_user'] = $data_user['foto'];
-
-    header("Location: index.php");
-    exit();
-}
+$error = '';
 
 // Tangkap pesan error dari redirect
 if (isset($_GET['error']) && $_GET['error'] == '1') {
     $error = "Email atau password salah.";
 }
 
+// Proses form login
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'] ?? '';
-$password = $_POST['password'] ?? '';
+    $password = $_POST['password'] ?? '';
 
-if (!empty($email) && !empty($password)) {
-    $query = "SELECT id, nama, password FROM user WHERE email = ?";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("s", $email);
+    if (!empty($email) && !empty($password)) {
+        $query = "SELECT id, nama, email, password, foto FROM user WHERE email = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
         $user = $result->fetch_assoc();
 
         if ($user && password_verify($password, $user['password'])) {
             session_regenerate_id(true);
+
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['nama_user'] = $user['nama'];
+            $_SESSION['foto_user'] = $user['foto'];
+
             header("Location: index.php");
             exit();
         } else {
-            // Redirect dengan parameter error
             header("Location: login.php?error=1");
             exit();
         }
     } else {
-        // Redirect dengan parameter error
         header("Location: login.php?error=1");
         exit();
     }
