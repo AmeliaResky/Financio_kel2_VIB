@@ -4,7 +4,9 @@ include 'koneksi.php';
 $email = $_POST['email'] ?? '';
 
 if (empty($email)) {
-    die("Email tidak boleh kosong.");
+    // Bisa juga kamu redirect balik ke form dengan error khusus
+    header("Location: lupa_password.php?error=kosong");
+    exit();
 }
 
 // Cek apakah email ada
@@ -14,10 +16,12 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows == 0) {
-    die("Email tidak ditemukan.");
+    // Kalau email tidak ditemukan, redirect balik dengan error
+    header("Location: lupa_password.php?error=email");
+    exit();
 }
 
-// Redirect langsung ke halaman reset password
+// Jika email ditemukan, arahkan ke halaman reset password
 header("Location: reset_password.php?email=" . urlencode($email));
 exit();
 ?>
