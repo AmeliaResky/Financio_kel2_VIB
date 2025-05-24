@@ -88,18 +88,18 @@ $namaUser = $user['nama'];
   </div>
 
     <!-- Logout tetap aman -->
-    <a href="#" onclick="return konfirmasiLogout(event)">Logout</a>
+<a href="#" style="background:red; color:white; padding:10px; border-radius:5px; text-decoration:none;" onclick="return konfirmasiLogout(event)">Logout</a>
 
-    <script>
-    function konfirmasiLogout(event) {
-      event.stopPropagation(); // cegah logout dianggap klik ke profil
-      const yakin = confirm("Yakin mau keluar, <?= htmlspecialchars($namaUser) ?>? 😢");
-      if (yakin) {
-        window.location.href = "logout.php";
-      }
-      return false;
-    }
-    </script>
+<script>
+function konfirmasiLogout(event) {
+  event.stopPropagation(); // Cegah logout dianggap klik ke elemen lain
+  const yakin = confirm("Yakin mau keluar, <?= htmlspecialchars($namaUser) ?>? 😢");
+  if (yakin) {
+    window.location.href = "logout.php";
+  }
+  return false;
+}
+</script>
 
   </div>
 </div>
