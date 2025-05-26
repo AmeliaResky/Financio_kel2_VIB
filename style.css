@@ -1,0 +1,320 @@
+/* ================= GLOBAL ================= */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  overflow: auto;
+}
+
+/* ================= SIDEBAR & DASHBOARD ================= */
+.sidebar {
+  position: fixed;
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  padding-top: 20px;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.sidebar .nav-link {
+  color: #333;
+  font-weight: 500;
+}
+
+.sidebar .nav-link.active {
+  color: #6f42c1;
+  font-weight: bold;
+  background-color: #eae2f8;
+  border-left: 4px solid #6f42c1;
+}
+
+.col-md-10 {
+  margin-left: 17%;
+  padding: 20px;
+  overflow: auto;
+}
+
+.content-section {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+/* ================= CHART ================= */
+#expenseChart {
+  width: 300px !important;
+  height: 300px !important;
+}
+
+.chart-container {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 2rem;
+}
+
+.chart-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.chart-labels {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.chart-labels li {
+  margin-bottom: 0.5rem;
+}
+
+.d-flex.align-items-start.gap-4 {
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* ================= PROFILE ================= */
+.profile-section {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ================= FORM / INPUT ================= */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ================= LOGIN PAGE ================= */
+.cio {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.cio-left {
+  background-color: #ffffff;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+}
+
+.cio-left img {
+  max-width: 120px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.cio-left .welcome-text {
+  text-align: center;
+  max-width: 400px;
+  margin-top: 40px;
+}
+
+.cio-left h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.cio-left p {
+  font-size: 18px;
+  color: #333;
+}
+
+.cio-right {
+  background-color: #6a0dad;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cio-login-box {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cio-login-box h3 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #6a0dad;
+}
+
+.cio-login-box input {
+  font-size: 14px;
+  padding: 12px 5px;
+  margin-bottom: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.cio-login-box p {
+  font-size: 13px; /* atau ukuran yang kamu mau, misalnya 12px */
+  margin-top: 10px; /* opsional, untuk kasih jarak dari atas */
+}
+
+.cio-login-box {
+  text-align: center;
+}
+
+.cio-login-box button {
+  background-color: #6a0dad;
+  color: #fff;
+  border: none;
+  padding: 15px 80px; /* tambahkan padding horizontal */
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+  width: auto; /* biar lebar sesuai isi */
+}
+
+.forgot-only {
+  text-align: right;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.cio-login-box a {
+  color: #6a0dad;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.cio-login-box a:hover {
+  text-decoration: underline;
+}
+
+/* ================= SIGNUP PAGE ================= */
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+.left {
+  flex: 1;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left img {
+  max-width: 90%;
+  height: auto;
+  object-fit: contain;
+}
+
+.right {
+  flex: 1;
+  background-color: #6a1b9a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+.right h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 20px; /* kanan kiri 10px */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+
+.form-group {
+  text-align: center;
+}
+
+.form-group button {
+  background-color: #9c27b0;
+  border: none;
+  padding: 12px 65px; /* tambahkan padding horizontal */
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+  /* width: 100%; → hapus ini biar gak full lebar */
+}
+.form-group button:hover {
+  background-color: #dc6bff;
+}
+
+.login-link {
+  font-size: 13px; /* atau coba 12px kalau mau lebih kecil */
+  text-align: center; /* opsional, biar teksnya di tengah */
+  margin-top: 1px;   /* opsional, kasih jarak atas */
+}
+
+.login-link a {
+  color: #dc6bff;
+  text-decoration: none;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px 75px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #f5c6cb;
+  font-size: 14px;
+
+  /* tambahan untuk ketengah */
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto 20px auto;
+}
